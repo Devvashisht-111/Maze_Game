@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TypeScript Game Maze with speech recognition!</title>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="row">
+    <div id="game_maze">
+        <div class="rules">
+            Move <span class="current">current dot</span> from <span class="start">start dot</span>
+            to <span class="end">end dot</span>
+        </div>
+        <canvas id="canvas"></canvas>
+        <div class="controls">
+            <button class="restart">restart <code>(space)</code></button>
+        </div>
+        <div class="controls">
+            <button class="up">up <code>(↑)</code></button>
+            <button class="down">down <code>(↓)</code></button>
+            <button class="left">left <code>(←)</code></button>
+            <button class="right">right <code>(→)</code></button>
+        </div>
+        <div class="message">
+        </div>
+    </div>
+</div>
+<script src="web-bundle.js"></script>
+<script src="game.js"></script>
+</body>
+
+</html>
