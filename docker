@@ -1,0 +1,22 @@
+# Use an official Node.js runtime as a base image
+FROM node:18-alpine
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and install any dependencies for Whisper and the web app
+COPY package*.json ./
+RUN npm install
+
+# Install Python and dependencies for Whisper
+RUN apk add --no-cache python3 py3-pip
+RUN pip3 install openai-whisper
+
+# Copy the rest of the application files
+COPY . .
+
+# Expose the port the app will run on
+EXPOSE 8080
+
+# Command to start the web server (you can change it based on your app's server configuration)
+CMD ["npm", "start"]
